@@ -1,0 +1,361 @@
+```html
+<!DOCTYPE html>	
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NØVAK - Tienda de ropa</title>
+	<meta name="description" content="NØVAK - Tienda de ropa urbana y moderna. Descubre nuestras novedades y productos.">
+<meta name="keywords" content="NØVAK, ropa, tienda de ropa, ropa urbana, moda">
+<meta name="author" content="NØVAK">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            color: #222;
+        }
+
+        /* CABECERA */
+        header {
+            background-color: #111;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+        /* INICIO */
+        .inicio {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        .inicio h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* BUSCADOR */
+        .buscador {
+            text-align: center;
+            margin: 20px auto 40px;
+        }
+
+        .buscador input {
+            width: 60%;
+            max-width: 600px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+        }
+
+        .buscador button {
+            padding: 15px 25px;
+            border: none;
+            background-color: #111;
+            color: white;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+        }
+
+        .buscador button:hover {
+            background-color: #333;
+        }
+
+        /* PRODUCTOS */
+        .productos {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .productos h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .contenedor-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .producto {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .producto h3 {
+            margin: 15px 0 10px;
+        }
+
+        .producto p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .precio {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .comprar {
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comprar:hover {
+            background-color: #333;
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+        }
+
+        /* MÓVIL */
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .inicio h1 {
+                font-size: 38px;
+            }
+
+            .buscador input {
+                width: 65%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <header>
+
+        <div class="logo">
+            NØVAK
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+        </nav>
+
+    </header>
+
+
+    <!-- INICIO -->
+    <section class="inicio" id="inicio">
+
+        <h1>NØVAK</h1>
+
+        <p>Tu estilo, tus reglas.</p>
+
+    </section>
+
+
+    <!-- BUSCADOR -->
+    <section class="buscador">
+
+        <input 
+            type="text"
+            id="buscar"
+            placeholder="Buscar productos..."
+            onkeyup="buscarProductos()"
+        >
+
+        <button onclick="buscarProductos()">
+            🔎 Buscar
+        </button>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+    <section class="productos" id="productos">
+
+        <h2>Productos NØVAK</h2>
+
+        <div class="contenedor-productos" id="listaProductos">
+
+
+            <!-- PRODUCTO 1 -->
+            <div class="producto">
+
+                <img src="https://via.placeholder.com/400x400" alt="Camiseta NØVAK">
+
+                <h3>Camiseta NØVAK</h3>
+
+                <p>Camiseta de algodón negra</p>
+
+                <div class="precio">
+                    25,00 €
+                </div>
+
+                <button class="comprar">
+                    Comprar
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCTO 2 -->
+            <div class="producto">
+
+                <img src="https://via.placeholder.com/400x400" alt="Sudadera NØVAK">
+
+                <h3>Sudadera NØVAK</h3>
+
+                <p>Sudadera urbana</p>
+
+                <div class="precio">
+                    45,00 €
+                </div>
+
+                <button class="comprar">
+                    Comprar
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCTO 3 -->
+            <div class="producto">
+
+                <img src="https://via.placeholder.com/400x400" alt="Gorra NØVAK">
+
+                <h3>Gorra NØVAK</h3>
+
+                <p>Gorra negra con logo</p>
+
+                <div class="precio">
+                    20,00 €
+                </div>
+
+                <button class="comprar">
+                    Comprar
+                </button>
+
+            </div>
+
+
+            <!--
+                AQUÍ PUEDES AÑADIR MÁS PRODUCTOS
+            -->
+
+
+        </div>
+
+    </section>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p>© 2026 NØVAK - Todos los derechos reservados</p>
+
+    </footer>
+
+
+    <!-- BUSCADOR -->
+    <script>
+
+        function buscarProductos() {
+
+            let texto = document
+                .getElementById("buscar")
+                .value
+                .toLowerCase();
+
+            let productos = document
+                .getElementsByClassName("producto");
+
+            for (let i = 0; i < productos.length; i++) {
+
+                let nombre = productos[i]
+                    .getElementsByTagName("h3")[0]
+                    .textContent
+                    .toLowerCase();
+
+                if (nombre.includes(texto)) {
+
+                    productos[i].style.display = "block";
+
+                } else {
+
+                    productos[i].style.display = "none";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
